@@ -1,0 +1,11 @@
+@isTest
+private class TestRestrictContactByName {
+    
+    @isTest static void testInvalidIdName(){
+        // invalid contact inserted
+        Contact contact = new Contact(LastName='INVALIDNAME');
+        insert contact;
+        Test.startTest();
+    }
+    
+}
