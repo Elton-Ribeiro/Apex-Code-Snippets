@@ -6,6 +6,7 @@ private class TestRestrictContactByName {
         Contact contact = new Contact(LastName='INVALIDNAME');
         insert contact;
         Test.startTest();
+        // should return STATUS FAIL
     }
     
 }
