@@ -2,11 +2,21 @@
 private class TestRestrictContactByName {
     
     @isTest static void testInvalidIdName(){
-        // invalid contact inserted
         Contact contact = new Contact(LastName='INVALIDNAME');
-        insert contact;
+        boolean hasException = false;
         Test.startTest();
-        // should return STATUS FAIL
+        
+        try {
+        	insert contact;    
+        }
+        catch (System.DmlException e) { 
+            system.assert(e.getMessage().contains('is not allowed'), 'Exceção não esperada');
+            system.asse
+            hasException = true;
+        }
+        system.assert(hasException == true, 'deveria ter exception');   
+        
+        Test.stopTest();
     }
     
 }
